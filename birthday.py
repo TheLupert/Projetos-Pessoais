@@ -22,21 +22,39 @@ print('''Digite algo da seguinte lista de opções:
 cmd = input("Digite aqui seu comando:")
 
 if cmd == 'add' or 'Add':
-    nome_aniv = input("Digite o nome do aniversáriante:")
+    nome_aniv = input("Digite o nome do novo aniversáriante:")
     while nome_aniv in aniversários:
         nome_aniv = input("Aniversariante já existente no banco de dados. Por favor, complemente o nome ou use outro:")
     data_aniv = str(input("Agora, digite a data de aniversário da pessoa no formato DD/MM/AAAA:"))
-    aniversários[nome_aniv] = data_aniv
     dataRegex = r'\d{2}/\d{2}/\d{4}'
     matchAniv = re.search(dataRegex, str(data_aniv))
     while matchAniv == None:
         data_aniv = input("Data inválida, tente novamente:")
         dataRegex = r'\d{2}/\d{2}/\d{4}'
         matchAniv = re.search(dataRegex, str(data_aniv))
-    if nome_aniv in aniversários:
-        print("Aniversáriante adicionado com sucesso!")
-##elif cmd == 'Edit' or 'edit':
-##
+    aniversários[nome_aniv] = data_aniv
+    print("Aniversáriante adicionado com sucesso!")
+elif cmd == 'Edit' or 'edit':
+    aniv_edit = input("Digite o nome do aniversáriante:")
+    if aniv_edit in aniversários:
+        print('''O que deseja mudar?
+        Digite 'Nome' para mudar nome da pessoa.
+        Digite 'Data' para mudar o aniversário da pessoa.''')
+        mudanca = str(input("Digite aqui sua opção:"))
+        if mudanca == 'Nome' or 'nome':
+            novo_nome = input("Digite o novo nome:")
+            aniversários[novo_nome] = aniversários.pop(aniv_edit)
+            print("Nome mudado com sucesso!")
+        elif mudanca == 'Data' or 'data':
+            nova_data = input("Digite a nova data de aniversário:")
+            aniversários[aniv_edit] = nova_data
+            print("Aniversário atualizado com sucesso!")
+        else:
+            print("Comando inválido, tente novamente!")
+            mudanca = input("O que deseja mudar?")
+    else:
+        print("Aniversariante não existe nos registros. Tente novamente ou deixe em branco para voltar.")
+        aniv_edit = input("Digite o nome do aniversáriante:")
 ##elif cmd == 'Remove' or 'remove':
 ##
 ##elif cmd == 'List' or 'list':
