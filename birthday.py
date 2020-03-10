@@ -23,6 +23,7 @@ cmd = input("Digite aqui seu comando:")
 
 if cmd == 'add' or 'Add':
     nome_aniv = input("Digite o nome do novo aniversáriante:")
+    #if nome_aniv == "cancel" or "Cancel"
     while nome_aniv in aniversários:
         nome_aniv = input("Aniversariante já existente no banco de dados. Por favor, complemente o nome ou use outro:")
     data_aniv = str(input("Agora, digite a data de aniversário da pessoa no formato DD/MM/AAAA:"))
@@ -55,7 +56,14 @@ elif cmd == 'Edit' or 'edit':
     else:
         print("Aniversariante não existe nos registros. Tente novamente ou deixe em branco para voltar.")
         aniv_edit = input("Digite o nome do aniversáriante:")
-##elif cmd == 'Remove' or 'remove':
+elif cmd == 'Remove' or 'remove':
+    aniv_remov = input("Digite o nome do aniversáriante a ser removido:")
+    if aniv_remov in aniversários:
+        aniversários.pop("aniv_remov")
+    else:
+        print("Aniversário não existente no dicionário. Tente novamente.")
+        aniv_remov = input("Digite o nome do aniversáriante a ser removido:")
+
 ##
 ##elif cmd == 'List' or 'list':
 ##
