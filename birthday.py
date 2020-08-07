@@ -11,7 +11,7 @@
 
 import re
 
-aniversarios = {"Gabriel":"17/11/1994"}
+aniversarios = {"Gabriel":"17/11"}
 comandos = ("Add", "add", "Edit", "edit", "Remove", "remove", "List", "list", "Exit", "exit")
 # Programar algo que impessa o usuário de deixar campos em branco.
 
