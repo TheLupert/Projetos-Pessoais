@@ -1,19 +1,21 @@
-#-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      Lupert
-#
-# Created:     15/06/2020
-# Copyright:   (c) Lupert 2020
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
-
 import re
+import os
+import pprint
 
-aniversarios = {"Gabriel":"17/11"}
+if 'aniversario_lista.py' in os.listdir('.'):
+    arquivoNiver = open(os.path.dirname(path) + '\\'+'aniverasario_lista.py')
+    aniversarios = arquivoNiver.read()
+    arquivoNiver.close()
+else:
+    aniversarios = {}
+    #ToDo: fazer o programa criar um arquivo para ser lido pela função salvarArquivo
+
 comandos = ("Add", "add", "Edit", "edit", "Remove", "remove", "List", "list", "Exit", "exit")
-# Programar algo que impessa o usuário de deixar campos em branco.
+
+def salvarArquivo(dict):
+    arqAniv = open('aniversario_lista.py, w')
+    arqAniv.write('listaAniversarios = '+ pprint.pformat(dict) + '\n')
+    arqAniv.close()
 
 while True:
     print('O que deseja fazer?')
@@ -23,10 +25,12 @@ while True:
     'Remove' para excluir um aniversariante da lista.
     'List' para ver todos os aniversariantes catalogados.
     'Exit' para sair do programa.''')
+
     cmd = input("Digite aqui seu comando:")
     while cmd not in comandos:
         print("Comando inválido, tente novamente!")
         cmd = input("Digite aqui seu comando:")
+
     if cmd == "Add" or cmd == "add": #Adicionar pessoas na lista.
         nome_aniv = str(input("Digite o nome do novo aniversáriante. Deixe em branco para voltar."))
         if nome_aniv != "":
@@ -41,6 +45,8 @@ while True:
                 matchAniv = re.search(dataRegex, str(data_aniv))
             aniversarios[nome_aniv] = data_aniv
             print("Aniversáriante adicionado com sucesso!")
+
+
     elif cmd == 'Edit' or cmd == 'edit': #Editar contatos.
         aniv_edit = str(input("Digite o nome do aniversáriante. Deixe em branco para voltar."))
         if aniv_edit != "":
@@ -79,6 +85,8 @@ while True:
                     print("Aniversário atualizado com sucesso!")
                 else:
                     break
+
+
     elif cmd == "Remove" or cmd == "remove": #Remover aniversariante.
         aniv_remov = str(input("Digite o aniversáriante a ser removido:"))
         while aniv_remov not in aniversarios:
@@ -87,8 +95,18 @@ while True:
         if aniv_remov != "":
             aniversarios.pop(aniv_remov)
             print("Aniversáriante removido com sucesso!")
+
+
     elif cmd == "List" or cmd == "list":
         for x,y in aniversarios.items():
             print("Nome: "+x+" / Aniversário: "+y) #Será que tem como fazer isso aparecer em um popup? Ou algo separado?
+
+
     else:
-        break
+        opcaoResp = ('S','s','N','n')
+        resp = ' '
+        while resp not in opcaoResp:
+            resp = str(input('Deseja salvar as mudanças feitas e sair do programa? S/N'))
+        if resp == 'S' or resp == 's':
+            salvarArquivo(aniversarios)
+            break
