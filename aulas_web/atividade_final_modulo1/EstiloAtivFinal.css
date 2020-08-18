@@ -1,0 +1,126 @@
+.topo-pagina {
+    background-color: #424242;
+    height: 70px;
+    position: relative;
+    line-height: 50px;
+    padding-top: 20px;
+}
+.nome-pagina {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    line-height: 0;
+    font-size: 37px;
+    color: antiquewhite;
+}
+.textinho {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: antiquewhite;
+    font-size: 20px;
+}
+.alinhamento {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.linha {
+    float: left;
+    margin: 5px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.Botao1 {
+    background-color: #2802ff;
+    height: 100px;
+    width: 200px;
+}
+.Botao1:active span {
+    display: none;
+}
+.Botao1:active {
+    background-color: #ff9900;
+}
+.Botao1:active::after{
+    content:"Laranja";
+}
+
+
+.Botao2 {
+    background-color: #9a02ff;
+    height: 100px;
+    width: 200px;
+}
+.Botao2:active span{
+    display: none;
+}
+.Botao2:active {
+background-color: #fffb00;
+}
+.Botao2:active::after {
+    content:"Amarelo";
+}
+
+
+.Botao3 {
+    background-color: #ff0202;
+    height: 100px;
+    width: 200px;
+}
+.Botao3:active span{
+    display: none;
+}
+.Botao3:active {
+background-color: #08b102;
+}
+.Botao3:active::after {
+    content:"Verde";
+}
+
+
+.Botao4 {
+    background-color: #7cff02;
+    height: 100px;
+    width: 200px;
+}
+.Botao4:active span{
+    display: none;
+}
+.Botao4:active {
+background-color: #f700ff;
+}
+.Botao4:active::after {
+    content:"Vermelho-arroxeado";
+}
+
+
+.Botao5 {
+    background-color: #046e39;
+    height: 100px;
+    width: 200px;
+}
+.Botao5:active span{
+    display: none;
+}
+.Botao5:active {
+background-color: #ff6600;
+}
+.Botao5:active::after {
+    content:"Amarelo-alaranjado";
+}
+
+
+.Botao6 {
+    background-color: #ffbc02;
+    height: 100px;
+    width: 200px;
+}
+.Botao6:active span{
+    display: none;
+}
+.Botao6:active {
+background-color: #5900ff;
+}
+.Botao6:active::after {
+    content:"Azul-arroxeado";
+}

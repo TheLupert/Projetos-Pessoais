@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloContato.css">
+    <title>1ª Aula PW2</title>
+</head>
+<body>
+    <header>
+        <div><h1>Cabeçalho</h1></div>
+    </header>
+
+    <section>
+        <form>
+            <div>
+                <input type="text" placeholder="Nome" id="txnome" class="tx" />
+            </div>
+
+            <div>
+                <input type="email" placeholder="E-mail" id="txEmail" class="tx" />
+            </div>
+
+            <div>
+                <input type="text" placeholder="Assunto" id="txAssunto" class="tx" />
+            </div>
+
+            <div>
+                <textarea placeholder="Mensagem" id="txMensagem" class="tx ta"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Enviar" class="bt" onclick="visualizarDados()"/>
+            </div>
+
+        </form>
+    </section>
+
+    <footer>
+        <div>
+            <p>Todos os direitos reservados. - 2020</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    function visualizarDados(){
+
+        var nome = document.getElementById("txnome").value;
+        var email = document.getElementById("txEmail").value;
+        var assunto = document.getElementById("txAssunto").value;
+        var mensagem = document.getElementById("txMensagem").value;
+
+
+
+        alert("Nome "+nome+"\nE-mail: "+email+"\nAssunto: "+assunto+"\n\nMensagem:\n"+mensagem);
+
+
+    }
+
+
+</script>
