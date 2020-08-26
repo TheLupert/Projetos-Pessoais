@@ -30,10 +30,17 @@
             </div>
 
             <div>
-                <input type="submit" value="Enviar" class="bt" onclick="visualizarDados()"/>
+                <!--
+                <input type="submit" value="Enviar" class="bt" onclick="visualizarDados()"/> -->
             </div>
-
         </form>
+
+        <button class="bt" onclick="visualizarDados()">Enviar</button>
+
+    </section>
+
+    <section>
+        <p id="resultado"></p>
     </section>
 
     <footer>
@@ -53,9 +60,13 @@
         var assunto = document.getElementById("txAssunto").value;
         var mensagem = document.getElementById("txMensagem").value;
 
+        document.getElementById("resultado").innerHTML = "Nome: " + nome + "<br/>E-mail: " + email +
+         "<br/>Assunto: " + assunto + "<br/>Mensagem: "  + mensagem;
 
+        document.getElementById("resultado").className = "results"; /*Insere uma classe na tag, mais fácil
+        do que ficar colocando várias linhas de getElementById(X).class */
 
-        alert("Nome "+nome+"\nE-mail: "+email+"\nAssunto: "+assunto+"\n\nMensagem:\n"+mensagem);
+        /* alert("Nome "+nome+"\nE-mail: "+email+"\nAssunto: "+assunto+"\n\nMensagem:\n"+mensagem); */
 
 
     }

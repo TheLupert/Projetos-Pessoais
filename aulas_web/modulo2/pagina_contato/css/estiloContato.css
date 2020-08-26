@@ -50,12 +50,19 @@ section .ta {
 
 section .bt {
     border: none;
-    background: rgb(125, 219, 125);
-    color: antiquewhite;
+    background: rgb(26, 170, 26);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     float: right;
     margin-top: 7px;
     padding: 8px 15px;
     margin-bottom: 100px;
 
+}
+
+.results {
+    background: seagreen;
+    color: #fff;
+    border-radius: 9px;
+    padding: 7px 11px;
 }
